@@ -154,7 +154,7 @@ python manage.py runserver
 ## 🔍 How It Works
 
 <div align="center">
-  <img src="workflow_graph.png" alt="MoodFlixx Conversation Workflow Graph" width="80%">
+  <img src="workflow.jpeg" alt="MoodFlixx Conversation Workflow Graph" width="80%">
 </div>
 
 ### Conversation Flow Graph Explained
