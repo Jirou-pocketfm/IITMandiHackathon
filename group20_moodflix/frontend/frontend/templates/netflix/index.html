@@ -75,41 +75,65 @@
     </svg>
 </button>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" style="color: #222;" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Survey</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form class="survey-form">
-          <label for="field-1-input">Question 1</label>
-          <input type="text" placeholder="Field 1" id="field-1-input">
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" style="color: #222;" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Survey</h5>
+        </div>
+        <div class="modal-body">
+          <form class="survey-form">
+            <label>🎬 What genre are you in the mood for?</label>
+            <div class="multi-column">
+              <div class="checkbox-item"><input type="checkbox" value="Action">Action</div>
+              <div class="checkbox-item"><input type="checkbox" value="Adventure">Adventure</div>
+              <div class="checkbox-item"><input type="checkbox" value="Animation">Animation</div>
+              <div class="checkbox-item"><input type="checkbox" value="Biography">Biography</div>
+              <div class="checkbox-item"><input type="checkbox" value="Comedy">Comedy</div>
+              <div class="checkbox-item"><input type="checkbox" value="Crime">Crime</div>
+              <div class="checkbox-item"><input type="checkbox" value="Documentary">Documentary</div>
+              <div class="checkbox-item"><input type="checkbox" value="Drama">Drama</div>
+              <div class="checkbox-item"><input type="checkbox" value="Family">Family</div>
+              <div class="checkbox-item"><input type="checkbox" value="Fantasy">Fantasy</div>
+              <div class="checkbox-item"><input type="checkbox" value="History">History</div>
+              <div class="checkbox-item"><input type="checkbox" value="Horror">Horror</div>
+              <div class="checkbox-item"><input type="checkbox" value="Musical">Musical</div>
+              <div class="checkbox-item"><input type="checkbox" value="Mystery">Mystery</div>
+              <div class="checkbox-item"><input type="checkbox" value="Romance">Romance</div>
+              <div class="checkbox-item"><input type="checkbox" value="Sci-Fi">SciFi</div>
+              <div class="checkbox-item"><input type="checkbox" value="Sport">Sport</div> 
+              <div class="checkbox-item"><input type="checkbox" value="Thriller">Thriller</div>
+              <div class="checkbox-item"><input type="checkbox" value="War">War</div>
+              <div class="checkbox-item"><input type="checkbox" value="Western">Western</div>
+            </div>
+          
+            <label for="language-select">🌍 Which language would you prefer the movie to be in?</label>
+            <select id="language-select">
+              <option>English</option>
+              <option>Hindi</option>
+              <option>French</option>
+            </select>
+          
+            <label for="description-input">📝 Briefly describe what you're looking for.</label>
+            <textarea id="description-input" placeholder="e.g., thrilling plot, love triangle, sci-fi adventure" rows="4" cols="50"></textarea>
+          
+            <label for="length-input">⏱️ How long do you want it to be?</label>
+            <input type="text" placeholder="e.g., Less than 2 hours, 6-episode series" id="length-input">
+          
+            <label for="year-input">📅 Are you looking for something from a specific year or era?</label>
+            <input type="range" id="eraSlider" min="1995" max="2017" step="0.1" value="1995" class="era-slider"/>
+            <div id="popupText"></div>
+          </form>
 
-          <label for="field-2-input">Question 2</label>
-          <input type="text" placeholder="Field 2" id="field-2-input">
-
-          <label for="field-3-input">Question 3</label>
-          <input type="text" placeholder="Field 3" id="field-3-input">
-
-          <label for="field-4-input">Question 4</label>
-          <input type="text" placeholder="Field 4" id="field-4-input">
-
-          <label for="field-5-input">Question 5</label>
-          <input type="text" placeholder="Field 5" id="field-5-input">
-      </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" onclick="submitSurvey()" data-dismiss="modal">Submit</button>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" onclick="submitSurvey()" data-dismiss="modal">Submit</button>
+        </div>
       </div>
     </div>
   </div>
-</div>
     <!-- END OF MAIN CONTAINER -->
 
     <!-- LINKS -->
@@ -167,78 +191,216 @@
     </div>
   </div>
 
-<style>
-  #chatbot-container {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: fit-content;
-    background: #222;
-    color: white;
-    border-radius: 4px;
-    overflow: hidden;
-    font-family: sans-serif;
-  }
-  #chat-window {
-    padding: 10px;
-    width: 300px;
-  }
-  #chat-messages {
-    max-height: 400px;
-    overflow-y: auto;
-    margin-bottom: 10px;
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  #chat-messages .user-message {
-    align-self: end;
-    padding: 4px;
-    background-color: aliceblue;
-    color: #222;
-    border-radius: 4px;
-    width: fit-content;
-    max-width: 75%;
-  }
-  #chat-messages .ai-message {
-    padding: 4px;
-    background-color: red;
-    color: aliceblue;
-    border-radius: 4px;
-    width: fit-content;
-    max-width: 75%;
-  }
-  #chat-input {
-    width: 70%;
-  }
-  button {
-    background: #e50914;
-    color: white;
-    border: none;
-    padding: 5px 8px;
-    margin-left: 5px;
-    border-radius: 4px;
-  }
-  .survey-form {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-  }
-  .survey-form input {
-    padding: 4px;
-    border-radius: 4px;
-    width: 100%;
-  }
-  .survey-form label {
-    margin-bottom: 0px;
-    margin-top: 0.2rem;
-  }
-  .launch-survey-btn{
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-  }
+  <style>
+    #chatbot-container {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: fit-content;
+      background: #222;
+      color: white;
+      border-radius: 4px;
+      overflow: hidden;
+      font-family: sans-serif;
+    }
+    #chat-window {
+      padding: 10px;
+      width: 300px;
+    }
+    #chat-messages {
+      max-height: 400px;
+      overflow-y: auto;
+      margin-bottom: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    #chat-messages .user-message {
+      align-self: end;
+      padding: 4px;
+      background-color: aliceblue;
+      color: #222;
+      border-radius: 4px;
+      width: fit-content;
+      max-width: 75%;
+    }
+    #chat-messages .ai-message {
+      padding: 4px;
+      background-color: red;
+      color: aliceblue;
+      border-radius: 4px;
+      width: fit-content;
+      max-width: 75%;
+    }
+    #chat-input {
+      width: 70%;
+    }
+    button {
+      background: #e50914;
+      color: white;
+      border: none;
+      padding: 5px 8px;
+      margin-left: 5px;
+      border-radius: 4px;
+    }
+    .survey-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background-color: #1f1f1f;
+      padding: 20px;
+      border-radius: 8px;
+      width: 100%;
+      color: #fff;
+    }
+    .survey-form input {
+      padding: 4px;
+      border-radius: 4px;
+      width: 100%;
+    }
+    .survey-form label {
+      margin-bottom: 0px;
+      margin-top: 0.2rem;
+    }
+    .launch-survey-btn{
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+    }
+
+    .multi-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr; /* Two vertical columns */
+      gap: 10px 30px; /* Row gap and column gap */
+      max-width: 100%;
+    }
+
+    .multi-column label {
+      width: 100%;
+    }
+
+    .multi-column .checkbox-item {
+      display: flex;
+      align-items: center;
+      padding: 6px 10px;
+      border-radius: 6px;
+      width: fit-content;
+    }
+
+    .multi-column .checkbox-item input[type="checkbox"] {
+      margin-right: 10px;
+      margin-left: 30px;
+      transform: scale(1.2);
+      accent-color: #e50914;
+    }
+    .modal-body{background-color: black;}
+    .modal-content{
+      background-color: red;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;}
+    
+    .modal-footer {
+      background-color: black;
+    }
+    .modal-title {
+      color: white;
+    }
+
+    .era-slider-container {
+      padding: 30px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+      margin-bottom: 40px;
+      display: inline-block;
+    }
+
+    .era-slider {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 60%;
+      height: 12px;
+      border-radius: 6px;
+      background: linear-gradient(to right, red 0%, #ddd 0%);
+      outline: none;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    .era-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: red;
+      cursor: pointer;
+      border: 2px solid white;
+      box-shadow: 0 0 4px rgba(0,0,0,0.2);
+    }
+
+    .era-slider::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+
+    .era-slider::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #333;
+      cursor: pointer;
+    }
+
+    .eraSlider::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #333;
+      cursor: pointer;
+    }
+
+    .era-icon, .era-label {
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+
+    .era-icon.show, .era-label.show {
+      opacity: 1;
+    }
+
+    .era-icon {
+      font-size: 80px;
+      margin: 30px;
+      color: #444;
+    }
+
+    .era-label {
+      font-size: 24px;
+      font-weight: bold;
+      color: #222;
+    }
+
+    .era-header {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .popupText {
+      position: absolute;
+      top: -40px;
+      transform: translateX(-50%);
+      background-color: #333;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 14px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      pointer-events: none;
+      white-space: nowrap;
+    }
   </style>
+
   <script>
   // function fetchUpdatedMovies(searchText = '') {
   //   fetch('/new/', {
@@ -382,17 +544,69 @@
   }
 
   // survey form
-  function submitSurvey(){
-    const field1 = document.getElementById("field-1-input").value
-    const field2 = document.getElementById("field-2-input").value
-    const field3 = document.getElementById("field-3-input").value
-    const field4 = document.getElementById("field-4-input").value
-    const field5 = document.getElementById("field-5-input").value
+  // survey form
+  function submitSurvey() {
+  // Collect selected genres (checkboxes)
+    const genreElements = document.querySelectorAll('.multi-column .checkbox-item input[type="checkbox"]:checked');
+    const genres = Array.from(genreElements).map(el => el.value);
 
-    console.log({field1, field2, field3, field4, field5})
-    // make the API call here
+    // Collect selected languages (multi-select)
+    const languageSelect = document.getElementById("language-select");
+    const languages = languageSelect.value;
 
+    // Other fields
+    const description = document.getElementById("description-input").value;
+    const length = document.getElementById("length-input").value;
+    const releaseYear = Math.round(document.getElementById("eraSlider").value);
+
+
+    console.log({genres, languages, description, length, releaseYear});
+    // TODO: Make the API call here using fetch or axios
   }
+  
+  const slider = document.getElementById("eraSlider");
+  const popupText = document.getElementById("popupText");
+  const submitBtn = document.getElementById("submitBtn");
+
+  let timeoutId;
+
+  function updatePopup(value) {
+      const year = Math.round(value);
+      popupText.textContent = year;
+      popupText.style.opacity = 1;
+
+      // Calculate thumb position
+      const sliderRect = slider.getBoundingClientRect();
+      const percent = (year - 1995) / (2017 - 1995);
+      const sliderWidth = slider.offsetWidth;
+      const thumbOffset = 24 / 2; // half thumb width to center popup
+      const pos = percent * sliderWidth;
+
+      popupText.style.left = `${pos}px`;
+
+      clearTimeout(timeoutId);
+      timeoutId = setTimeout(() => {
+        popupText.style.opacity = 0;
+      }, 500);
+      updateSliderBackground(value);
+  }
+
+  function updateSliderBackground(value) {
+    const percent = ((value - 1995) / (2017 - 1995)) * 100;
+    slider.style.background = `linear-gradient(to right, red 0%, red ${percent}%, #ddd ${percent}%, #ddd 100%)`;
+  }
+
+  slider.addEventListener("input", (e) => {
+    updatePopup(e.target.value);
+  });
+
+  submitBtn.addEventListener("click", () => {
+    const rounded = Math.round(slider.value);
+    alert("You selected: " + (icons[rounded]?.decade || "Unknown Era"));
+  });
+
+  // Initial display
+  updatePopup(slider.value);
 
 </script>
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

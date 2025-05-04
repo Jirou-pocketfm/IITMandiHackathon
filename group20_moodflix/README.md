@@ -193,6 +193,13 @@ This directed graph architecture enables the system to maintain context througho
   - Vector database: `faiss_index/`
   - Document store: `documents.pkl`
   - Movie CSV: `data/processed/processed_movies.csv`
+- Database
+ - https://github.com/zl-gan/recommender-system
+ - https://files.grouplens.org/datasets/movielens/ml-25m-README.html#:~:text=This%20dataset%20%28ml,generated%20on%20November%2021%2C%202019
+ - https://files.grouplens.org/datasets/movielens/ml-20m-README.html#:~:text=The%20data%20are%20contained%20in,of%20all%20these%20files%20follows
+ - https://github.com/sidooms/MovieTweetings
+
+
 
 ## 🔮 Future Enhancements
 
